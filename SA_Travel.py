@@ -1,9 +1,8 @@
 #!/usr/bin/python3
+# Required imports
 import pandas as pd
 
-
 def main():
-    #Opening prompt
     df = pd.read_excel('SA_Travel.xlsx', sheet_name = [0,1,2,3,4,5])
     #pd.set_option("display.max_columns", 10, "display.max_rows", None)
 
@@ -11,7 +10,7 @@ def main():
     excel_file = 'SA_Travel.xlsx'
 
     # create a DataFrame (DF) object
-    travel = pd.read_excel(excel_file)
+    #travel = pd.read_excel(excel_file)
 
     # show the first five rows of our DF
     #print(travel.head())
@@ -67,14 +66,29 @@ def main():
         # print the top 10 movies in the dataframe
         # print(travel_sheet1.head()) 
 
-        # export 5 movies from the top dataframe to excel
-        travel_sheet0.head(6).to_excel("Top5SA_Travel.xlsx")
+        # Export topics from the top dataframe to excel
+        travel_sheet0.head().to_excel("Tours_and_Sightseeing.xlsx")
+        travel_sheet1.head().to_excel("Outdoors.xlsx")
+        travel_sheet2.head().to_excel("Shopping.xlsx")
+        travel_sheet3.head().to_excel("Historic.xlsx")
+        travel_sheet4.head().to_excel("Amusement_and_Museums.xlsx")
+        travel_sheet5.head().to_excel("Great_Views.xlsx")
 
-        # export 5 movies from the top of the dataframe to json
-        travel_sheet0.head(6).to_json("Top5SA_Travel.json")
+        # Export 5 movies from the top of the dataframe to json
+        travel_sheet0.head().to_json("Tours_and_Sightseeing.json")
+        travel_sheet1.head().to_json("Outdoors.json")
+        travel_sheet2.head().to_json("Shopping.json")
+        travel_sheet3.head().to_json("Historic.json")
+        travel_sheet4.head().to_json("Amusement_and_Museums.json")
+        travel_sheet5.head().to_json("Great_Views.json")
 
         # export 5 movies from the top of the dataframe to csv
-        travel_sheet0.head(6).to_csv("Top5SA_Travel.csv")
+        travel_sheet0.head().to_csv("Tours_and_Sightseeing.csv")
+        travel_sheet1.head().to_csv("Outdoors")
+        travel_sheet2.head().to_csv("Shopping")
+        travel_sheet3.head().to_csv("Historic")
+        travel_sheet4.head().to_csv("Amusement_and_Museums.csv")
+        travel_sheet5.head().to_csv("Great_Views.csv")
 
 
 if __name__ == "__main__":
